@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import HumiditySensor, TemperatureSensor, CarbonDioxideSensor
 
-# Register your models here.
+admin.site.register(HumiditySensor)
+admin.site.register(TemperatureSensor)
+admin.site.register(CarbonDioxideSensor)

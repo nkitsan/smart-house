@@ -1,8 +1,8 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 
-def sensers(request, data):
+def sensors(request, data):
 	print(data)
-	return
+	return HttpResponse()
