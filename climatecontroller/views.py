@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
+from climatecontroller.libs.managers import request_manager
+
 
 def sensors(request, data):
-	print(data)
+	request_manager.post_data(data)
 	return HttpResponse()
