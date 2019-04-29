@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import HumiditySensor, TemperatureSensor, CarbonDioxideSensor
+from .models import HumidityController, TemperatureController, CarbonDioxideController
 
-admin.site.register(HumiditySensor)
-admin.site.register(TemperatureSensor)
-admin.site.register(CarbonDioxideSensor)
+admin.site.register(HumidityController)
+admin.site.register(TemperatureController)
+admin.site.register(CarbonDioxideController)

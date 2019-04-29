@@ -1,7 +1,7 @@
 from django.utils import timezone
 from datetime import datetime, timedelta
 
-from climatecontroller.models import Temperature
+from climatecontroller.models import Temperature, TemperatureController
 
 
 def create_temperature(value, time):
@@ -30,3 +30,6 @@ def delete_obsolete_data():
 	for temperature in temperatures:
 		if time_now - temperature.time >= delta_time:
 			delete_temperature(temperature)
+
+def get_controller():
+	return TemperatureController.objects.all().first()

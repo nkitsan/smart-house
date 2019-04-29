@@ -1,3 +1,7 @@
-temperature = 'T1'
-humidity = 'H1'
-carbondioxide = 'CO21'
+temperature = 'Temperature'
+humidity = 'Humidity'
+carbondioxide = 'CO2'
+
+ventilation = 'Ventilation'
+heater = 'Heater'
+humidifier = 'Humidifier'

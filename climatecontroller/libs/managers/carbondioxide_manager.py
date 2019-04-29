@@ -1,7 +1,7 @@
 from django.utils import timezone
 from datetime import datetime, timedelta
 
-from climatecontroller.models import CarbonDioxide
+from climatecontroller.models import CarbonDioxide, CarbonDioxideController
 
 
 def create_carbondioxide(value, time):
@@ -30,3 +30,6 @@ def delete_obsolete_data():
 	for carbondioxide in carbondioxides:
 		if time_now - carbondioxide.time >= delta_time:
 			delete_carbondioxide(carbondioxide)
+
+def get_controller():
+	return CarbonDioxideController.objects.all().first()

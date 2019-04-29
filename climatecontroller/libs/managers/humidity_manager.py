@@ -1,7 +1,7 @@
 from django.utils import timezone
 from datetime import datetime, timedelta
 
-from climatecontroller.models import Humidity
+from climatecontroller.models import Humidity, HumidityController
 
 
 def create_humidity(value, time):
@@ -31,3 +31,5 @@ def delete_obsolete_data():
 		if time_now - humidity.time >= delta_time:
 			delete_humidity(humidity)
 
+def get_controller():
+	return HumidityController.objects.all().first()

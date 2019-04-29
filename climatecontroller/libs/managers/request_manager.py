@@ -8,8 +8,7 @@ from climatecontroller.libs.parsers import request_parser
 from climatecontroller.libs.helpers import params_helper
 
 
-def post_data(str):
-	data = request_parser.string_to_dict(str)
+def save_sensors_data(data):
 	time = datetime.now(tz=timezone.utc)
 
 	if params_helper.temperature in data:
