@@ -52,11 +52,3 @@ def manage_carbondioxide(current_value):
             request_manager.change_controller_state(controller.controller_ip, 
                                                     controller.controller_gpio,
                                                     0)
-            
-
-
-        
-
-
-        
-
