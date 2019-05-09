@@ -17,4 +17,4 @@ def sensors(request, data):
 
 def temperature_view(request):
 	data = request_parser.objects_to_json(temperature_manager.get_temperatures())
-	return render(request, 'climatecontroller/temperature_view.html', {'temperatures': data})
+	return render(request, 'climatecontroller/base.html', {'temperatures': data})

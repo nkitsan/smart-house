@@ -26,9 +26,12 @@
       
         </nav>
 
-        {% block content %}
-        {% endblock %}
-
+        <div id="chart"></div>
+    
+        <script>
+            window.data = {{ temperatures|safe  }};
+        </script>
+    
         <script src="{% static 'js/moment.min.js' %}"></script>
         <script src="{% static 'js/d3.v5.min.js' %}"></script>
     
