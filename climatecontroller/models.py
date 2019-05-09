@@ -8,6 +8,9 @@ class HumidityController(models.Model):
 	preffered_value = models.FloatField(validators=[MinValueValidator(30.0), MaxValueValidator(60.0)], default=30.0)
 	control_mode = models.BooleanField(default=True)
 	delta = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)], default=1.0)
+
+	def __str__(self):
+        return 'Controller to manage humidity levels'
 	
 class TemperatureController(models.Model):
 	controller_ip = models.GenericIPAddressField()
@@ -16,12 +19,18 @@ class TemperatureController(models.Model):
 	control_mode = models.BooleanField(default=True)
 	delta = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)], default=1.0)
 
+	def __str__(self):
+        return 'Controller to manage humidity temperature'
+
 class CarbonDioxideController(models.Model):
 	controller_ip = models.GenericIPAddressField()
 	controller_gpio = models.PositiveSmallIntegerField(blank=False, null=False)
 	control_mode = models.BooleanField(default=True)
-	max_value = models.FloatField(validators=[MinValueValidator(2000.0), MaxValueValidator(10000.0)], default=10000.0)
-	min_value = models.FloatField(validators=[MinValueValidator(2000.0), MaxValueValidator(10000.0)], default=2000.0)
+	max_value = models.FloatField(validators=[MinValueValidator(1400.0), MaxValueValidator(2000.0)], default=1400.0)
+	min_value = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(1350.0)], default=800.0)
+
+	def __str__(self):
+        return 'Controller to manage carbondioxide levels'
 						
 class Humidity(models.Model):
 	time = models.DateTimeField()
