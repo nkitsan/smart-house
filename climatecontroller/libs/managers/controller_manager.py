@@ -11,15 +11,15 @@ from climatecontroller.libs.helpers import params_helper
 
 def control_climate(data):
     if params_helper.temperature in data:
-        manage_climate_state(data[params_helper.temperature], 
+        manage_climate_state(float(data[params_helper.temperature]), 
                              temperature_manager.get_controller())
     
     if params_helper.humidity in data:
-        manage_climate_state(data[params_helper.humidity], 
+        manage_climate_state(float(data[params_helper.humidity]), 
                              humidity_manager.get_controller())
 
     if params_helper.carbondioxide in data:
-        manage_carbondioxide(data[params_helper.carbondioxide])
+        manage_carbondioxide(float(data[params_helper.carbondioxide]))
     
 def manage_climate_state(current_value, controller):
     if controller.control_mode:
