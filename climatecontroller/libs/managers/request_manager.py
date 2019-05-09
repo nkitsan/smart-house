@@ -29,6 +29,6 @@ def change_controller_state(ip, gpio, value):
 
 def get_controller_state(ip, gpio):
 	response = requests.get('http://%(ip)s/control?cmd=Status,GPIO,%(gpio)s' %
-							(ip, gpio, value)).json()
+							(ip, gpio)).json()
 
 	return response['state']
