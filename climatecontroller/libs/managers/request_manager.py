@@ -24,11 +24,9 @@ def save_sensors_data(data):
 
 def change_controller_state(ip, gpio, value):
 	if value == 1 or value == 0:
-		requests.get('http://%(ip)s/control?cmd=GPIO,%(gpio)s,%(value)s' %
-					 (ip, gpio, value))
+		requests.get('http://%(ip)s/control?cmd=GPIO,%(gpio)s,%(value)s' % {'ip' : ip, 'gpio' : gpio, 'value': value})
 
 def get_controller_state(ip, gpio):
-	response = requests.get('http://%(ip)s/control?cmd=Status,GPIO,%(gpio)s' %
-							(ip, gpio)).json()
+	response = requests.get('http://%(ip)s/control?cmd=Status,GPIO,%(gpio)s' % {'ip' : ip, 'gpio' : gpio}).json()
 
 	return response['state']
