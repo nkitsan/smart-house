@@ -17,10 +17,10 @@
                     <a class="nav-link" href="{% url 'temperature_view' %}">Temperature</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Humidity</a>
+                    <a class="nav-link" href="{% url 'humidity_view' %}">Humidity</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CO2</a>
+                    <a class="nav-link" href="{% url 'carbondioxide_view' %}">CO2</a>
                 </li>
             </ul>
       
@@ -29,7 +29,7 @@
         <div id="chart"></div>
     
         <script>
-            window.data = {{ temperatures|safe  }};
+            window.data = {{ data|safe  }};
         </script>
     
         <script src="{% static 'js/moment.min.js' %}"></script>
