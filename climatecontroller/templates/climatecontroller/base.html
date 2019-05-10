@@ -26,12 +26,12 @@
       
         </nav>
 
-        <div id="chart"></div>
-        
         <div class="control-btns">
             {% block content %}
             {% endblock %}
         </div>
+        
+        <div id="chart"></div>
 
         <script>
             window.data = {{ data|safe  }};

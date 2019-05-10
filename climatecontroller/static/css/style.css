@@ -29,7 +29,7 @@ a:hover {
 }
 
 .controller {
-  margin: 15px 0px 0px 30px;
+  margin: 15px 5px 5px 30px;
   background-color: #459328;
   border: 0px;
   border-radius: 4px;
@@ -43,5 +43,9 @@ nav {
 
 .control-btns {
   display: flex;
-  margin-left: 20px; 
+  margin-left: 50px; 
+}
+
+.controller-action-btn {
+  padding-left: 10px; 
 }

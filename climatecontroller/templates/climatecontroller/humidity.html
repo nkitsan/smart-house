@@ -1,7 +1,7 @@
 {% extends 'climatecontroller/base.html' %}
 
 {% block content %}
-    <button class="btn btn-primary">
+    <button class="btn btn-primary controller-action-btn">
         <a href="">
             {% if mode == 1 %}
                 Off control
@@ -12,7 +12,7 @@
     </button>
 
     {% if mode == 0 %}
-        <button class="btn btn-primary">
+        <button class="btn btn-primary controller-action-btn">
                 <a href="">
                     {% if state == 0 %}
                         On water

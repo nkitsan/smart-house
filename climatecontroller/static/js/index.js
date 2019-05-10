@@ -14,8 +14,8 @@ var data = [
     },
   ];
   
-  var width = 500;
-  var height = 300;
+  var width = 1000;
+  var height = 800;
   var margin = 50;
   var duration = 250;
   
@@ -29,17 +29,6 @@ var data = [
   var circleOpacityOnLineHover = "0.25"
   var circleRadius = 3;
   var circleRadiusHover = 6;
-  
-  
-  /* Format Data */
-//   var parseDate = d3.timeParse("%Y");
-//   data.forEach(function(d) { 
-//     d.values.forEach(function(d) {
-//       d.date = parseDate(d.date);
-//       d.value = +d.value;    
-//     });
-//   });
-  
   
   /* Scale */
   var xScale = d3.scaleTime()
