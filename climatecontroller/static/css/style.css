@@ -17,3 +17,21 @@ svg {
 .title-text {
   font-size: 12px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.controller {
+  margin: 15px 0px 0px 30px;
+  background-color: #459328;
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+}

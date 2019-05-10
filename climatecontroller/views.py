@@ -17,13 +17,24 @@ def sensors(request, data):
 
 def temperature_view(request):
 	data = request_parser.objects_to_json(temperature_manager.get_temperatures())
-	return render(request, 'climatecontroller/base.html', {'data': data})
+	mode = temperature_manager.get_mode()
+	state = controller_manager.get_temperature_controller_state()
+	return render(request, 'climatecontroller/temperature.html', {'data': data,
+														   'mode': mode,
+														   'state': state})
 
 def humidity_view(request):
 	data = request_parser.objects_to_json(humidity_manager.get_humidities())
-	return render(request, 'climatecontroller/base.html', {'data': data})
+	mode = humidity_manager.get_mode()
+	state = controller_manager.get_humidity_controller_state()
+	return render(request, 'climatecontroller/humidity.html', {'data': data,
+														   'mode': mode,
+														   'state': state})
 
 def carbondioxide_view(request):
 	data = request_parser.objects_to_json(carbondioxide_manager.get_carbondioxides())
-	return render(request, 'climatecontroller/base.html', {'data': data})
-
+	mode = carbondioxide_manager.get_mode()
+	state = controller_manager.get_carbondioxide_controller_state()
+	return render(request, 'climatecontroller/carbondioxide.html', {'data': data,
+														   'mode': mode,
+														   'state': state})

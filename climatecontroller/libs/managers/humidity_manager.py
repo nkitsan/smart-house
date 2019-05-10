@@ -33,3 +33,6 @@ def delete_obsolete_data():
 
 def get_controller():
 	return HumidityController.objects.all().first()
+
+def get_mode():
+	return get_controller().control_mode

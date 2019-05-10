@@ -52,3 +52,18 @@ def manage_carbondioxide(current_value):
             request_manager.change_controller_state(controller.controller_ip, 
                                                     controller.controller_gpio,
                                                     0)
+
+def get_carbondioxide_controller_state():
+    controller = carbondioxide_manager.get_controller()
+    return  request_manager.get_controller_state(controller.controller_ip, 
+                                                 controller.controller_gpio)
+
+def get_humidity_controller_state():
+    controller = humidity_manager.get_controller()
+    return  request_manager.get_controller_state(controller.controller_ip, 
+                                                 controller.controller_gpio)
+
+def get_temperature_controller_state():
+    controller = temperature_manager.get_controller()
+    return  request_manager.get_controller_state(controller.controller_ip, 
+                                                 controller.controller_gpio)                                        
