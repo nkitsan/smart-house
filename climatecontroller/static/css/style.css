@@ -35,3 +35,13 @@ a:hover {
   border-radius: 4px;
   cursor: pointer;
 }
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.control-btns {
+  display: flex;
+  margin-left: 20px; 
+}

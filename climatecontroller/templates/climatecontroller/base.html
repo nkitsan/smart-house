@@ -16,10 +16,10 @@
                 <li class="nav-item controller">
                     <a class="nav-link" href="{% url 'temperature_view' %}">Temperature</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item controller">
                     <a class="nav-link" href="{% url 'humidity_view' %}">Humidity</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item controller">
                     <a class="nav-link" href="{% url 'carbondioxide_view' %}">CO2</a>
                 </li>
             </ul>
@@ -27,13 +27,15 @@
         </nav>
 
         <div id="chart"></div>
-    
+        
+        <div class="control-btns">
+            {% block content %}
+            {% endblock %}
+        </div>
+
         <script>
             window.data = {{ data|safe  }};
         </script>
-    
-        {% block content %}
-        {% endblock %}
 
         <script src="{% static 'js/moment.min.js' %}"></script>
         <script src="{% static 'js/d3.v5.min.js' %}"></script>
