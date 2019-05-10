@@ -1,4 +1,4 @@
-let dateTimeFormat = 'DD-MM-YYYY HH:mm';
+let dateTimeFormat = 'YYYY-MM-DD HH:mm';
 
 let dataValues = window.data.map((d) => {
     return {
