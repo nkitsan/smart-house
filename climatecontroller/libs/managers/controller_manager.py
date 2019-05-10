@@ -66,4 +66,40 @@ def get_humidity_controller_state():
 def get_temperature_controller_state():
     controller = temperature_manager.get_controller()
     return  request_manager.get_controller_state(controller.controller_ip, 
-                                                 controller.controller_gpio)                                        
+                                                 controller.controller_gpio)
+
+def change_carbondioxide_controller_state():
+    controller = carbondioxide_manager.get_controller()   
+    current_state = get_carbondioxide_controller_state()
+    new_state = 0
+
+    if current_state == 0:
+        new_state = 1
+
+    request_manager.change_controller_state(controller.controller_ip, 
+                                            controller.controller_gpio,
+                                            new_state)
+
+def change_humidity_controller_state():
+    controller = humidity_manager.get_controller()   
+    current_state = get_humidity_controller_state()
+    new_state = 0
+
+    if current_state == 0:
+        new_state = 1
+
+    request_manager.change_controller_state(controller.controller_ip, 
+                                            controller.controller_gpio,
+                                            new_state)
+
+def change_temperature_controller_state():
+    controller = temperature_manager.get_controller()   
+    current_state = get_temperature_controller_state()
+    new_state = 0
+
+    if current_state == 0:
+        new_state = 1
+
+    request_manager.change_controller_state(controller.controller_ip, 
+                                            controller.controller_gpio,
+                                            new_state)

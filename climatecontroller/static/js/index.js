@@ -14,7 +14,7 @@ var data = [
     },
   ];
   
-  var width = 1000;
+  var width = 1600;
   var height = 800;
   var margin = 50;
   var duration = 250;

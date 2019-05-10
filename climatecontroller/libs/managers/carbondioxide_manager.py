@@ -36,3 +36,11 @@ def get_controller():
 
 def get_mode():
 	return get_controller().control_mode
+
+def change_mode():
+	controller = get_controller()
+	if controller.control_mode == 1:
+		controller.control_mode = 0
+	else:
+		controller.control_mode = 1
+	controller.save()
