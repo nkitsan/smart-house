@@ -120,24 +120,30 @@ var data = [
           .append("text")
           .attr("class", "text")
           .text(`Value: ${d.value}`)
-          .attr("x", d => xScale(d.date) + 5)
+          .attr("x", d => xScale(d.date) + 10)
           .attr("y", d => yScale(d.value) - 10);
 
         group
           .append('text')
           .attr('class', 'text-date')
           .text(`Date: ${moment(d.date).format('MM/DD/YYYY HH:mm')}`)
-          .attr('x', d => xScale(d.date) + 5)
-          .attr("y", d => yScale(d.value) + 5);
+          .attr('x', d => xScale(d.date) + 10)
+          .attr("y", d => yScale(d.value) + 10);
 
         parent.append(this);
       })
     .on("mouseout", function(d) {
-        d3.select(this)
+        const group = d3.select(this);
+
+        group
           .style("cursor", "none")  
           .transition()
           .duration(duration)
           .selectAll(".text").remove();
+
+        group
+          .selectAll(".text-date")
+          .remove();
       })
     .append("circle")
     .attr("cx", d => xScale(d.date))
