@@ -9,7 +9,7 @@ let dataValues = window.data.map((d) => {
 
 var data = [
     {
-      name: "Tempetarure",
+      name: window.name,
       values: dataValues,
     },
   ];
@@ -36,7 +36,7 @@ var data = [
     .range([0, width-margin]);
   
   var yScale = d3.scaleLinear()
-    .domain([0, d3.max(data[0].values, d => d.value)])
+    .domain([10, d3.max(data[0].values, d => d.value)])
     .range([height-margin, 0]);
   
   var color = d3.scaleOrdinal(d3.schemeCategory10);
