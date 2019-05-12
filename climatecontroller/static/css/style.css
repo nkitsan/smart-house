@@ -11,7 +11,13 @@ svg {
 }
 
 .text {
-  font-size: 12px;
+  font-size: 14px;
+  stroke: #ccc;
+}
+
+.text-date {
+  font-size: 13px;
+  stroke: #ccc;
 }
 
 .title-text {

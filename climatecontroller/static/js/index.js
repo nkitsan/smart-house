@@ -36,7 +36,10 @@ var data = [
     .range([0, width-margin]);
   
   var yScale = d3.scaleLinear()
-    .domain([10, d3.max(data[0].values, d => d.value)])
+    .domain([
+      d3.min(data[0].values, d => d.value) - 5,
+      d3.max(data[0].values, d => d.value)
+    ])
     .range([height-margin, 0]);
   
   var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -109,13 +112,25 @@ var data = [
     .append("g")
     .attr("class", "circle")  
     .on("mouseover", function(d) {
-        d3.select(this)     
+        const group = d3.select(this);
+        const parent = this.parentNode;
+
+        group
           .style("cursor", "pointer")
           .append("text")
           .attr("class", "text")
-          .text(`${d.value}`)
+          .text(`Value: ${d.value}`)
           .attr("x", d => xScale(d.date) + 5)
           .attr("y", d => yScale(d.value) - 10);
+
+        group
+          .append('text')
+          .attr('class', 'text-date')
+          .text(`Date: ${moment(d.date).format('MM/DD/YYYY HH:mm')}`)
+          .attr('x', d => xScale(d.date) + 5)
+          .attr("y", d => yScale(d.value) + 5);
+
+        parent.append(this);
       })
     .on("mouseout", function(d) {
         d3.select(this)
@@ -159,4 +174,4 @@ var data = [
     .attr("y", 15)
     .attr("transform", "rotate(-90)")
     .attr("fill", "#000")
-    .text("Temperature");
+    .text(window.name);
