@@ -20,7 +20,7 @@ class TemperatureController(models.Model):
 	delta = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)], default=1.0)
 
 	def __str__(self):
-		return 'Controller to manage humidity temperature'
+		return 'Controller to manage temperature'
 
 class CarbonDioxideController(models.Model):
 	controller_ip = models.GenericIPAddressField()
